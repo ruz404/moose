@@ -156,6 +156,16 @@ config( [ '$stateProvider', '$urlRouterProvider', '$mdThemingProvider', function
 			},
 		}
 	}).
+  state( 'agente.desarrollo_oiaNuevo', {
+    //parent: 'agente',
+    url: '/desarrollo/OIA/nuevo', // se le suma al url del padre = '/home' + '/agent' + '/perfil'
+    views: {
+      '': {
+        templateUrl: 'states/agent/desarrollo/oia/oia.view.html',
+        controller: 'oiaController',
+      },
+    }
+  }).
 	state( 'agente.desarrollo_fod', {
 		//parent: 'agente',
 		url: '/desarrollo/FOD', // se le suma al url del padre = '/home' + '/agent' + '/perfil'
