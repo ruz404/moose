@@ -1,0 +1,49 @@
+<div ng-controller="homeController as vm">
+	<section layout flex>
+		<md-sidenav md-is-locked-open="$mdMedia('gt-md')" class="md-sidenav-left" md-component-id="sideMenu">
+			<md-toolbar layout-padding style="height: 149px;" class="set-background">
+				<div layout="column" layout-padding layout-align="center start">
+					<div class="avatar-picture"></div>
+					<label style="font-size: 16px; margin: 0; margin-top: 5px;">Adrían Salinas Basave</label>
+					<p style="font-size: 14px; margin: 0;">adrian@basave.com</p>
+				</div>
+			</md-toolbar>
+			<md-content layout-padding>
+				<div layout="column" layout-align="center start" flex>
+					<md-button class="md-secondary" ng-click="vm.buscarProspecto( $event )">
+						<md-icon md-font-set="material-icons">search</md-icon>
+						Buscar prospecto
+					</md-button>
+					<md-button class="md-secondary">
+						<md-icon md-font-set="material-icons">timeline</md-icon>
+						Dashboard
+					</md-button>
+					<md-button class="md-secondary" ui-sref="arranque_rapido">
+						<md-icon md-font-set="material-icons">flag</md-icon>
+						Arranque rápido
+					</md-button>
+					<md-button class="md-secondary" ui-sref="nuevo_prospecto">
+						<md-icon md-font-set="material-icons">person_add</md-icon>
+						Nuevo prospecto
+					</md-button>
+					<md-button class="md-secondary" ui-sref="equipo">
+						<md-icon md-font-set="material-icons">group</md-icon>
+						Equipo
+					</md-button>
+					<md-button class="md-secondary">
+						<md-icon md-font-set="material-icons">report</md-icon>
+						Ajustes
+					</md-button>
+				</div>
+			</md-content>
+		</md-sidenav>
+		<md-content flex style="max-height: 100vh; height: 100vh"  class="grey-background">
+			<md-toolbar  hide-gt-md style="min-height: 20px">
+				<md-button class="md-icon-button" ng-click="vm.toggleSidemenu()">
+					<md-icon md-font-set="material-icons">menu</md-icon>
+				</md-button>
+			</md-toolbar>
+			<div class="childView" ui-view="" style="height: 100vh; max-height: 100vh; overflow: auto;">
+		</md-content>
+	</section>
+</div>

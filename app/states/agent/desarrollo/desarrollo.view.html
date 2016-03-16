@@ -1,0 +1,194 @@
+<div ng-controller="desarrolloController as vm">
+	<div flex="100" layout>
+		<div flex="33" layout layout-padding>
+			<div layout="column" flex="100">
+				<md-card flex style="position: relative">
+					<div style="position: absolute; top: 0; left: 0; background-color: rgba(3, 84, 150, 1 ); width: 8px; height: 100%;"></div>
+					<md-card-title layout="column">
+						<md-card-title-text class="md-headline">Compromisos</md-card-title-text>
+						<md-card-title-text class="md-subhead">10 días</md-card-title-text>
+					</md-card-title>
+					<md-divider></md-divider>
+					<md-card-content>
+						<label style="font-weight: 700;">2 pendientes</label>
+					</md-card-content>
+					<md-card-actions layout layout-align="end center">
+						<md-button class="md-icon-button" ui-sref="agente.desarrollo_compromisos">
+							<md-tooltip md-direction="top">Ver detalle</md-tooltip>
+							<md-icon md-font-set="material-icons">visibility</md-icon>
+						</md-button>
+					</md-card-actions>
+				</md-card>
+				<md-card flex style="position: relative">
+					<div style="position: absolute; top: 0; left: 0; background-color: rgba(3, 84, 150, 1 ); width: 8px; height: 100%;"></div>
+					<md-card-title>
+						<md-card-title-text class="md-headline">Fechas Críticas</md-card-title-text>
+					</md-card-title>
+					<md-divider></md-divider>
+					<md-card-content layout>
+						<div flex="50" layout="column">
+							<p class="grey-text little-text">Precontrato</p>
+							<md-progress-linear md-mode="determinate" value="100"></md-progress-linear>
+							<p class="grey-text little-text">Evaluación</p>
+							<md-progress-linear md-mode="determinate" value="65"></md-progress-linear>
+							<p class="grey-text little-text">Firma Contrato 2</p>
+							<md-progress-linear md-mode="determinate" value="15"></md-progress-linear>
+							<p class="grey-text little-text">Firma Contrato Definitivo</p>
+							<md-progress-linear md-mode="determinate" value="0"></md-progress-linear>
+						</div>
+						<div flex="50" layout="column" layout-align="center center" style="position: relative">
+							<p style="position: absolute; width: 100%; height: 100%; margin: 0; line-height: 9; top: 0; text-align: center; font-weight: 700;">5 días</p>
+							<md-progress-circular  md-mode="determinate" value="85" md-diameter="100"></md-progress-circular>
+						</div>
+					</md-card-content>
+				</md-card>
+			</div>
+		</div>
+		<div flex="33" layout layout-padding>
+			<div layout="column" flex="100">
+				<md-card flex style="position: relative">
+					<div style="position: absolute; top: 0; left: 0; background-color: rgba(3, 84, 150, 1 ); width: 8px; height: 100%;"></div>
+					<md-card-title layout="column">
+						<md-card-title-text class="md-headline">AG3</md-card-title-text>
+						<md-card-title-text class="md-subhead">2 meses</md-card-title-text>
+					</md-card-title>
+					<md-divider></md-divider>
+					<md-card-content layout="column">
+						<div flex layout layout-align="space-between">
+							<div flex="50" layout layout-align="start center" layout-padding>
+								<label class="little-text grey-text">Promedio</label><label style="font-weight: 700">58.2</label>
+							</div>
+							<div flex="50" layout layout-align="start center" layout-padding>
+								<label class="little-text grey-text">Último</label><label style="font-weight: 700">61.4</label>
+							</div>
+						</div>
+						<div id="container" style="min-width: 100px; max-width: 250px; height: 250px; margin: 0 auto">Placeholder for chart</div>
+					</md-card-content>
+					<md-card-actions layout layout-align="end center">
+						<md-button class="md-icon-button" ui-sref="agente.desarrollo_ag3">
+							<md-tooltip md-direction="top">Ver detalle</md-tooltip>
+							<md-icon md-font-set="material-icons">visibility</md-icon>
+						</md-button>
+					</md-card-actions>
+				</md-card>
+			</div>
+		</div>
+		<div flex="33" layout layout-padding>
+			<div layout="column" flex="100">
+				<md-card flex style="position: relative">
+					<div style="position: absolute; top: 0; left: 0; background-color: rgba(3, 84, 150, 1 ); width: 8px; height: 100%;"></div>
+					<md-card-title layout="column">
+						<md-card-title-text class="md-headline">FOD</md-card-title-text>
+					</md-card-title>
+					<md-divider></md-divider>
+					<md-card-content layout layout-align="space-between">
+						<div flex="50" layout layout-align="start center">
+							<label style="font-weight: 700;">6 citas</label>
+						</div>
+						<div flex="50" layout layout-align="start center" layout-padding>
+							<label class="little-text grey-text">Promedio</label><label style="font-weight: 700">4.4</label>
+						</div>
+					</md-card-content>
+					<md-card-actions layout layout-align="end center">
+						<md-button class="md-icon-button" ui-sref="agente.desarrollo_fod">
+							<md-tooltip md-direction="top">Ver detalle</md-tooltip>
+							<md-icon md-font-set="material-icons">visibility</md-icon>
+						</md-button>
+					</md-card-actions>
+				</md-card>
+				<md-card flex style="position: relative">
+					<div style="position: absolute; top: 0; left: 0; background-color: rgba( 189, 24, 90, 1 ); width: 8px; height: 100%;"></div>
+					<md-card-title layout="column">
+						<md-card-title-text class="md-headline">AG2</md-card-title-text>
+						<md-card-title-text class="md-subhead">2 años 4 meses</md-card-title-text>
+					</md-card-title>
+					<md-divider></md-divider>
+					<md-card-content layout="column" layout-padding>
+						<div flex layout layout-align="space-between center">
+							<label>Pólizas vida</label>
+							<label style="font-weight: 700;">28</label>
+						</div>
+						<div flex layout layout-align="space-between center">
+							<label>Pólizas GMM</label>
+							<label style="font-weight: 700;">128</label>
+						</div>
+						<div flex layout layout-align="space-between center">
+							<label>Total</label>
+							<label style="font-weight: 700;">156</label>
+						</div>
+					</md-card-content>
+					<md-divider></md-divider>
+					<md-card-content layout="column" layout-padding>
+						<div flex layout layout-align="space-between center">
+							<label class="little-text grey-text">Comisión mensual promedio</label>
+							<label style="font-weight: 700;">{{ 354014 | currency }}</label>
+						</div>
+						<div flex layout layout-align="space-between center">
+							<label class="little-text grey-text">Comisión mensual personal</label>
+							<label style="font-weight: 700;">{{ 478987 | currency }}</label>
+						</div>
+					</md-card-content>
+					<md-card-actions layout layout-align="end center">
+						<md-button class="md-icon-button" ui-sref="agente.desarrollo_ag2">
+							<md-tooltip md-direction="top">Ver detalle</md-tooltip>
+							<md-icon md-font-set="material-icons">visibility</md-icon>
+						</md-button>
+					</md-card-actions>
+				</md-card>
+			</div>
+		</div>
+	</div>
+	<div flex="100" layout>
+		<div flex="33" layout layout-padding>
+			<div layout="column" flex="100">
+				<md-card flex style="position: relative">
+					<div style="position: absolute; top: 0; left: 0; background-color: rgba( 189, 24, 90, 1 ); width: 8px; height: 100%;"></div>
+					<md-card-title layout="column">
+						<md-card-title-text class="md-headline">Arranque rápido</md-card-title-text>
+					</md-card-title>
+					<md-divider></md-divider>
+					<md-card-content layout layout-padding>
+						<div flex layout layout-align="space-between center">
+							<label style="font-weight: 700;">31/50</label>
+						</div>
+						<div flex layout layout-align="space-between center">
+							<label class="little-text grey-text">Asistencia</label>
+							<label style="font-weight: 700;">{{ 93 | number: 0 }} %</label>
+						</div>
+					</md-card-content>
+					<md-card-actions layout layout-align="end center">
+						<md-button class="md-icon-button" ui-sref="arranque_rapido">
+							<md-tooltip md-direction="top">Ver detalle</md-tooltip>
+							<md-icon md-font-set="material-icons">visibility</md-icon>
+						</md-button>
+					</md-card-actions>
+				</md-card>
+			</div>
+		</div>
+		<div flex="66" layout layout-padding>
+			<div layout="column" flex="100">
+				<md-card flex style="position: relative">
+					<div style="position: absolute; top: 0; left: 0; background-color: rgba(3, 84, 150, 1 ); width: 8px; height: 100%;"></div>
+					<md-card-title layout="column">
+						<md-card-title-text class="md-headline">OIA</md-card-title-text>
+						<md-card-title-text class="md-subhead">3 meses</md-card-title-text>
+					</md-card-title>
+					<md-divider></md-divider>
+					<md-card-content layout layout-padding>
+						<div flex layout="column" layout-align="space-between center" layout-padding>
+							<label style="font-weight: 700;">{{ 440000 | currency }} Meta anual</label>
+							<md-progress-linear md-mode="determinate" value="50"></md-progress-linear>
+							<label class="little-text grey-text">{{ 240000 | currency }} acumulado ( {{ 55 }} % )</label>
+						</div>
+					</md-card-content>
+					<md-card-actions layout layout-align="end center">
+						<md-button class="md-icon-button" ui-sref="agente.desarrollo_oia">
+							<md-tooltip md-direction="top">Ver detalle</md-tooltip>
+							<md-icon md-font-set="material-icons">visibility</md-icon>
+						</md-button>
+					</md-card-actions>
+				</md-card>
+			</div>
+		</div>
+	</div>
+</div>

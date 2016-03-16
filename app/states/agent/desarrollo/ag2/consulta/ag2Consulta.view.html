@@ -1,0 +1,136 @@
+<div ng-controller="ag2ConsultaController as vm">
+  <md-card>
+    <md-card-header>
+      <div layout flex>
+        <div layout layout-align="start center" flex="60">
+          <h1 class="md-toolbar-tools">AG2 Consulta</h1>
+        </div>
+        <div layout layout-align="end center" flex="40">
+              <md-button>EDITAR</md-button>
+              <md-button>BORRAR</md-button>
+          <md-button class="md-icon-button" ui-sref="agente.desarrollo_ag2">
+            <md-icon class="material-icons">close</m-icon>
+          </md-button>
+        </div>
+      </div>
+    </md-card-header>
+    <md-divider></md-divider>
+    <md-card-content>
+      <h5>Información personal</h5>
+       <div flex="100" layout layout-align="start start">
+           <div layout layout-align="start start" flex="25">
+             <div layout="column">
+               <label class="detail-label">Cliente</label>
+               <p  class="detail-text">{{vm.lista.cliente}}</p>
+               <label class="detail-label">Fecha</label>
+               <p  class="detail-text">{{vm.lista.fecha}}</p>
+               <label class="detail-label">Teléfono</label>
+               <p  class="detail-text">{{vm.lista.telefono}}</p>
+               <label class="detail-label">Sexo</label>
+               <p  class="detail-text">{{vm.lista.sexo}}</p>
+            </div>
+           </div>
+           <div layout layout-align="start start" flex="25">
+             <div layout="column">
+               <label class="detail-label">Dependientes</label>
+               <p  class="detail-text">{{vm.lista.dependientes}}</p>
+               <label class="detail-label">Edad</label>
+               <p  class="detail-text">{{vm.lista.edad}}</p>
+               <label class="detail-label">Estado Civil</label>
+               <p  class="detail-text">{{vm.lista.ecivil}}</p>
+               <label class="detail-label">Empleado</label>
+               <p  class="detail-text">{{vm.lista.piempleado}}</p>
+             </div>
+           </div>
+           <div layout layout-align="start start" flex="25">
+             <div layout="column">
+               <label class="detail-label">Ocupación</label>
+               <p  class="detail-text">{{vm.lista.ocupacion}}</p>
+               <label class="detail-label">Empresa</label>
+               <p  class="detail-text">{{vm.lista.empresa}}</p>
+               <label class="detail-label">Ingresos Mensuales</label>
+               <p  class="detail-text">{{vm.lista.ingmensuales}}</p>
+               <label class="detail-label">Fuente</label>
+               <p  class="detail-text">{{vm.lista.fuente}}</p>
+             </div>
+           </div>
+           <div layout layout-align="start start" flex="25" >
+             <div layout="column">
+               <label class="detail-label">Referidos Obtenidos</label>
+               <p  class="detail-text">{{vm.lista.refobtenidos}}</p>
+               <label class="detail-label">Dirección</label>
+               <p  class="detail-text">{{vm.lista.direccion}}</p>
+             </div>
+           </div>
+       </div>
+      <h5>Información de Solicitud</h5>
+       <div layout layout-align="start start" flex="100">
+          <div layout layout-align="start start" flex="25" layout-align="up">
+            <div layout="column">
+              <label class="detail-label">Necesidad cubierta</label>
+              <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.wuno">Protección</md-checkbox></p>
+              <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.wdos">Salud</md-checkbox></p>
+              <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.wtres">Acumulación</md-checkbox></p>
+              <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.wcuatro">Retiro</md-checkbox></p>
+              <label class="detail-label">Fecha de ingreso solicitud</label>
+              <p  class="detail-text">{{vm.lista.fechais}}</p>
+              <label class="detail-label">Fecha de examen médico</label>
+              <p  class="detail-text">{{vm.lista.fechaem}}</p>
+              <label class="detail-label">Producto vendido</label>
+              <p  class="detail-text">{{vm.lista.pvendido}}</p>
+            </div>
+          </div>
+          <div layout layout-align="start start" flex="25">
+            <div layout="column">
+              <label class="detail-label">Suma asegurada</label>
+              <p  class="detail-text">{{vm.lista.sumaas}}</p>
+              <label class="detail-label">Moneda</label>
+              <p  class="detail-text">{{vm.lista.moneda}}</p>
+              <label class="detail-label">Paridad</label>
+              <p  class="detail-text">{{vm.lista.paridad}}</p>
+              <label class="detail-label">Comisiones estimadas 1er año</label>
+              <p  class="detail-text">{{vm.lista.comisiones}}</p>
+              <label class="detail-label">Fecha de pago</label>
+              <p  class="detail-text">{{vm.lista.fechap}}</p>
+              <label class="detail-label">Fecha de entrega</label>
+              <p  class="detail-text">{{vm.lista.fechae}}</p>
+            </div>
+          </div>
+          <div layout layout-align="start start" flex="25">
+            <div layout="column">
+              <label class="detail-label">Conducto de cobro</label>
+              <p  class="detail-text">{{vm.lista.conducto}}</p>
+              <label class="detail-label">Forma de pago</label>
+              <p  class="detail-text">{{vm.lista.formap}}</p>
+              <label class="detail-label">Prima anualizada</label>
+              <p  class="detail-text">{{vm.lista.prima}}</p>
+              <label class="detail-label"># Póliza</label>
+              <p  class="detail-text">{{vm.lista.numpoliza}}</p>
+              <label class="detail-label">Fecha de seguimiento</label>
+              <p  class="detail-text">{{vm.lista.fechas}}</p>
+            </div>
+          </div>
+          <div layout layout-align="start start" flex="25">
+            <div layout="column">
+              <label class="detail-label">Necesidades futuras</label>
+              <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.tuno">Protección</md-checkbox></p>
+              <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.tdos">Salud</md-checkbox></p>
+              <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.ttres">Acumulación</md-checkbox></p>
+              <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.tcuatro">Retiro</md-checkbox></p>
+              <label class="detail-label">Comentarios</label>
+              <p  class="detail-text">{{vm.lista.comentarios}}</p>
+            </div>
+          </div>
+       </div>
+       <!--
+       <div flex="100" layout layout-align="start center">
+         <div flex="60" layout layout-align="start center">
+         </div>
+         <div flex="40" layout layout-align="end end">
+           <md-button>EDITAR</md-button>
+           <md-button>BORRAR</md-button>
+         </div>
+       </div>-->
+    </md-card-content>
+  </md-card>
+</div>

@@ -1,0 +1,27 @@
+<md-dialog ng-cloak style="min-width: 320px">
+	<md-dialog-content>
+		<div flex layout layout-align="space-between center" layout-padding>
+			<h2 class="md-title">Buscar Prospecto</h2>
+			<md-button class="md-icon-button" ng-click="vm.cancelarDialogo()">
+				<md-icon md-icon-fonts="material-icons">close</md-icon>
+			</md-button>
+		</div>
+		<div flex layout class="md-dialog-content-body" layout-padding>
+			<md-autocomplete flex name="prospecto" md-input-name="prospecto"
+			md-selected-item="vm.prospecto" md-search-text="vm.nombreProspecto"
+			md-items="item in vm.buscarTexto( vm.nombreProspecto, vm.prospectos )" md-item-text="item.display" md-min-length="1" md-floating-label="Nombre de prospecto">
+				<md-item-template>
+					<span md-highlight-text="vm.nombreProspecto" md-highlight-flags="^i">{{ item.display }}</span>
+				</md-item-template>
+				<md-not-found>
+					No se encontraron prospectos
+				</md-not-found>
+			</md-autocomplete>
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout layout-align="end center">
+		<md-button class="md-accent" ng-click="vm.verDetalle()">
+			Ver detalle
+		</md-button>
+	</md-dialog-actions>
+</md-dialog>

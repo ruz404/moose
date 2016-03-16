@@ -1,0 +1,34 @@
+<md-dialog ng-cloak style="min-width: 420px">
+	<md-dialog-content layout-padding>
+		<h2 class="md-title">Agendar cita selección</h2>
+		<div flex layout="column">
+			<md-input-container class="input-format">
+				<label>Entrevistador</label>
+				<input type="text" placeholder="Alejandra María Sánchez " ng-model="user.client" />
+			</md-input-container>
+			<div flex layout layout-align="end center">
+				<md-datepicker flex style="padding: 0; margin: 0" ng-model="myDate" md-placeholder="Fecha"></md-datepicker>
+				<md-select flex ng-model="OptionsDial1" placeholder="Hora" style="height: 36px;">
+					<md-option value="Opcion 1">
+						Opcion 1
+					</md-option>
+					<md-option value="Opcion 2">
+						Opcion 2
+					</md-option>
+					<md-option value="Opcion 3">
+						Opcion 3
+					</md-option>
+		        </md-select>
+			</div>
+			<md-input-container class="input-format">
+	        	<label>Descripción</label>
+				<textarea ng-model="user.biography" md-maxlength="140" rows="3" maxlength="140" cols="3"></textarea>
+	        </md-input-container>
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions>
+		<md-button ng-click="closeDialog()" class="md-primary">
+			Guardar
+		</md-button>
+	</md-dialog-actions>
+</md-dialog>

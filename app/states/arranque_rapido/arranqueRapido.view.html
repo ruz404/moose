@@ -1,0 +1,59 @@
+<div ng-controller="arranqueRapidoController as vm" ng-cloak>
+	<md-toolbar  style="height: 149px;">
+		<div layout flex>
+			<div layout layout-align="start center" flex="80">
+				<h2 class="md-toolbar-tools">Arranque rápido</h2>
+			</div>
+			<div layout layout-align="end center" flex="20">
+				<md-button class="md-icon-button">
+					<md-icon md-font-set="material-icons">search</i>
+				</md-button>
+			</div>
+		</div>
+	</md-toolbar>
+	<md-card>
+  <!-- Empieza contenido de panel -->
+ <md-card-content>
+     <md-list >
+     <md-subheader class="md-no-sticky">
+       <div layout layout-align="start center">
+         <div flex="33" layout layout-align="start center"> Nombre
+           <md-button class="md-icon-button" ng-click="vm.ordernarNombres( 'name' )">
+			   <md-icon ng-show="vm.ordering == 'DESC'" md-set-font="material-icons">arrow_downward</md-icon>
+			   <md-icon ng-show="vm.ordering == 'ASC'" md-set-font="material-icons">arrow_upward</md-icon>
+           </md-button>
+           <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
+         </div>
+         <div flex="33" layout layout-align="center center"> Curso </div>
+         <div flex="33" layout layout-align="end center"> Asistencia </div>
+       </div>
+     </md-subheader>
+     <!--se termina subheader y empieza la lista -->
+     <md-divider></md-divider>
+    <md-list-item ng-repeat="topping in vm.toppings">
+      <div flex="100" layout layout-align="start center">
+        <div flex="33" layout layout-align="start center">
+          <p> {{ topping.name }} </p>
+        </div>
+        <div flex="33" layout layout-align="center center">
+          <p>{{topping.contact}}</p>
+        </div>
+        <div flex="33" layout layout-align="end center">
+          <md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
+        </div>
+      </div>
+
+
+
+
+      <md-divider></md-divider>
+    </md-list-item>
+
+       <!-- <div layout="column"> -->
+         <!-- <div flex>First item in column</div> -->
+         <!-- <div flex>Second item in column</div> -->
+      <!-- </div> -->
+      </md-list>
+ </md-card-content>
+</md-card>
+</div>

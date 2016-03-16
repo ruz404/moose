@@ -1,0 +1,89 @@
+<div ng-controller="compromisosController as vm">
+  <md-card>
+    <md-card-header>
+      <div layout flex>
+        <div layout layout-align="start center" flex="60">
+          <h1 class="md-toolbar-tools">Compromisos</h1>
+        </div>
+        <div layout layout-align="end center" flex="40">
+          <!--<md-button ng-click="vm.newDialogPOP($event)">NUEVO</md-button>-->
+          <md-button class="md-icon-button" ui-sref="agente.desarrollo_dashboard">
+            <md-icon md-font-set="material-icons">close</md-icon>
+          </md-button>
+        </div>
+      </div>
+    </md-card-header>
+    <md-card-content>
+      <md-list>
+        <md-subheader class="md-no-sticky">
+          <div layout="columns"  flex layout layout-align="start center">
+            <div flex="10" layout layout-align="start center"> Fecha </div>
+            <div flex="20" layout layout-align="start center"> Tema
+              <md-button class="md-icon-button" ng-click="vm.ordenar( 'usuario' )">
+                <md-icon ng-show="vm.ordering == 'DESC'" md-set-font="material-icons">arrow_downward</md-icon>
+                <md-icon ng-show="vm.ordering == 'ASC'" md-set-font="material-icons">arrow_upward</md-icon>
+              </md-button>
+              <span class="sortorder" ng-show="predicate === 'usuario'" ng-class="{reverse:reverse}"></span>
+              </md-button></div>
+            <div flex="10" layout layout-align="start center"> </div>
+            <div flex="20" layout layout-align="start center"> Usuario </div>
+            <div flex="30" layout layout-align="start center"> Compromiso </div>
+            <div flex="10" layout layout-align="start center"> Fecha Cumplimiento </div>
+          </div>
+        </md-subheader>
+        <!--se termina subheader y empieza la lista -->
+        <md-divider></md-divider>
+       <md-list-item ng-repeat="datos in vm.datos" ng-click="vm.prueba(fecha)">
+         <!--<tr ng-repeat="friend in friends | orderBy:predicate:reverse">-->
+         <div flex="100" layout layout-align="start center" class="md-icon-button" aria-label="Open demo menu" flex style="margin:10px 0px 10px;" ng-click="$mdOpenMenu($event)">
+           <div flex="10" layout layout-align="start center">
+             <p>{{ datos.fecha}}</p>
+           </div>
+           <div flex="20" layout layout-align="start center">
+             <p>{{ datos.tema}}</p>
+           </div>
+           <div flex="10" layout layout-align="start center">
+             <div class="avatar-picture"></div>
+           </div>
+           <div flex="20" layout layout-align="start center">
+             <p> {{ datos.usuario }} </p>
+           </div>
+           <div flex="30" layout layout-align="start center">
+             <p> {{ datos.compromiso }} </p>
+           </div>
+           <div flex="10" layout layout-align="start center">
+             <p> {{ datos.fechacum }} </p>
+           </div>
+         </div>
+         <!-- Cuadro de menu de opciones -->
+           <div layout="column" flex-sm="5" layout-align="center center">
+             <md-menu md-offset="0 -7">
+               <md-button id="{{datos.id}}" aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                 <i class="material-icons">more_vert</i>
+               </md-button>
+               <md-menu-content width="3"  >
+                 <md-menu-item>
+                   <md-button ng-click="vm.eliminar()">
+                     <md-icon md-font-set="material-icons">delete</md-icon>
+                       Eliminar
+                   </md-button>
+                 </md-menu-item>
+                 <md-menu-item>
+                   <md-button ng-click="vm.showDialogPOP($index)">
+                     <md-icon md-font-set="material-icons">mode_edit</md-icon>
+                       Editar
+                   </md-button>
+                 </md-menu-item>
+               </md-menu-content>
+             </md-menu>
+           </div><!--TERMINA menu de opciones -->
+         <md-divider></md-divider>
+       </md-list-item>
+     </md-list>
+    </md-card-content>
+  </md-card>
+  <div flex style="height: 35px"></div>
+  <md-button ng-click="vm.newDialogPOP($event)" class="md-fab md-accent" style="position: fixed; right:50px; bottom:10px">
+    <md-icon md-font-set="material-icons">add</md-icon>
+  </md-button>
+</div>

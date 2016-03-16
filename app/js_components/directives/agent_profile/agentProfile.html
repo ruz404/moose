@@ -1,0 +1,595 @@
+<md-card ng-cloak>
+	<md-card-content style="padding: 0;">
+		<md-list style="padding: 0px;">
+			<md-list-item ng-dblclick="editThis( 'informacion-personal' )" style="cursor: pointer; padding: 0px;" class="animated">
+				<div layout="column" flex>
+					<div id="informacion-personal-inputs" class="animate-inputs is-selected" ng-show="sections[0].editable" click-outside="closeThis( 'informacion-personal' )" layout layout-padding>
+						<div layout="column" flex>
+							<label style="margin-top: 8px;">Información personal</label>
+							<div layout>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Nombre</label>
+										<input type="text" ng-model="agent.name" />
+									</md-input-container>
+									<md-input-container>
+										<label>Título univesitario</label>
+										<input type="text" ng-model="agent.education" />
+									</md-input-container>
+									<md-input-container>
+										<label>Sexo</label>
+										<input type="text" ng-model="agent.sex" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Apellido paterno</label>
+										<input type="text" ng-model="agent.lastname_1" />
+									</md-input-container>
+									<md-input-container>
+										<label>Pasatiempo</label>
+										<input type="text" ng-model="agent.hobby" />
+									</md-input-container>
+									<md-input-container>
+										<label>Univesidad</label>
+										<input type="text" ng-model="agent.university" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Apellido materno</label>
+										<input type="text" ng-model="agent.lastname_2" />
+									</md-input-container>
+									<md-input-container>
+										<label>Estado civil</label>
+										<input type="text" ng-model="agent.civil_status" />
+									</md-input-container>
+									<md-input-container>
+										<label>Fecha de nacimiento</label>
+										<input type="text" ng-model="agent.birthdate" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>RFC</label>
+										<input type="text" ng-model="agent.rfc" />
+									</md-input-container>
+									<md-input-container>
+										<label>Dirección</label>
+										<textarea ng-model="agent.address" columns="4" rows="4" md-maxlength="100"></textarea>
+									</md-input-container>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="animate-details" ng-show="!sections[0].editable" layout="column" layout-padding flex>
+						<label style="margin-top: 8px;">Información personal</label>
+						<div layout flex>
+							<div layout flex>
+								<div class="agent-photo"></div>
+							</div>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Nombre</label>
+									<p  class="detail-text">{{agent.name + ' ' + agent.lastname_1 + ' ' + agent.lastname_2 }}</p>
+								</div>
+								<md-divider></md-divider>
+								<div layout="column">
+									<label class="detail-label">Título universitario</label>
+									<p class="detail-text">{{agent.education}}</p>
+								</div>
+								<div layout="column">
+									<label  class="detail-label">Sexo</label>
+									<p  class="detail-text">{{agent.sex}}</p>
+								</div>
+								<div layout="column">
+									<label  class="detail-label">Pasatiempo</label>
+									<p  class="detail-text">{{agent.hobby}}</p>
+								</div>
+							</div>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Universidad</label>
+									<p  class="detail-text">{{agent.university}}</p>
+								</div>
+								<div layout="column">
+									<label class="detail-label">Estado civil</label>
+									<p class="detail-text">{{agent.civil_status}}</p>
+								</div>
+								<div layout="column">
+									<label  class="detail-label">Fecha de nacimiento</label>
+									<p  class="detail-text">{{agent.birthdate}}</p>
+								</div>
+								<div layout="column">
+									<label  class="detail-label">RFC</label>
+									<p  class="detail-text">{{agent.rfc}}</p>
+								</div>
+							</div>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Dirección</label>
+									<p  class="detail-text">{{agent.address}}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</md-list-item>
+			<!-- CONTROL INTERNO -->
+			<md-list-item ng-dblclick="editThis( 'control-interno' )" style="cursor: pointer; padding: 0px;" class="animated">
+				<div layout="column" flex>
+					<div id="control-interno-inputs" class="animate-inputs is-selected" ng-show="sections[1].editable" click-outside="closeThis( 'control-interno' )" layout layout-padding>
+						<div layout="column" flex>
+							<label style="margin-top: 8px;">Control Interno</label>
+							<div layout>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Nombre</label>
+										<input type="text" ng-model="agent.executive.name" />
+									</md-input-container>
+									<md-input-container>
+										<label>Agencia</label>
+										<input type="text" ng-model="agent.executive.agency" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Apellido paterno</label>
+										<input type="text" ng-model="agent.executive.lastname_1" />
+									</md-input-container>
+									<md-input-container>
+										<label>Fuente</label>
+										<input type="text" ng-model="agent.executive.source" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Apellido materno</label>
+										<input type="text" ng-model="agent.executive.lastname_2" />
+									</md-input-container>
+									<md-input-container>
+										<label>Subfuente</label>
+										<input type="text" ng-model="agent.executive.subsource" />
+									</md-input-container>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="animate-details" ng-show="!sections[1].editable" layout="column" layout-padding flex>
+						<label style="margin-top: 8px;">Control Interno</label>
+						<div layout flex>
+							<div layout="column" flex>
+								<label  class="detail-label">Ejecutivo</label>
+								<p  class="detail-text">{{agent.executive.name + ' ' + agent.executive.lastname_1 + ' ' + agent.executive.lastname_2 }}</p>
+							</div>
+							<div layout="column" flex>
+								<label class="detail-label">Agencia</label>
+								<p class="detail-text">{{agent.executive.agency}}</p>
+							</div>
+							<div layout="column" flex>
+								<label  class="detail-label">Fuente</label>
+								<p  class="detail-text">{{agent.executive.source}}</p>
+							</div>
+							<div layout="column" flex>
+								<label class="detail-label">Subfuente</label>
+								<p class="detail-text">{{agent.executive.subsource}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</md-list-item>
+			<!-- INFORMACION CONTACTO -->
+			<md-divider></md-divider>
+			<md-list-item ng-dblclick="editThis( 'informacion-contacto' )" style="cursor: pointer; padding: 0px;" class="animated">
+				<div layout="column" flex>
+					<div id="informacion-contacto-inputs" class="animate-inputs is-selected" ng-show="sections[2].editable" click-outside="closeThis( 'informacion-contacto' )" layout layout-padding>
+						<div layout="column" flex>
+							<label style="margin-top: 8px;">Información contacto</label>
+							<div layout>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Teléfono</label>
+										<input type="text" ng-model="agent.telephone" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Celular</label>
+										<input type="text" ng-model="agent.mobile" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>E-mail</label>
+										<input type="text" ng-model="agent.email" />
+									</md-input-container>
+								</div>
+								<span flex></span>
+							</div>
+						</div>
+					</div>
+					<div class="animate-details" ng-show="!sections[2].editable" layout="column" layout-padding flex>
+						<label style="margin-top: 8px;">Información contacto</label>
+						<div layout flex>
+							<div layout="column" flex>
+								<label  class="detail-label">Teléfono</label>
+								<p  class="detail-text">{{ agent.telephone }}</p>
+							</div>
+							<div layout="column" flex>
+								<label class="detail-label">Celular</label>
+								<p class="detail-text">{{ agent.mobile }}</p>
+							</div>
+							<div layout="column" flex>
+								<label  class="detail-label">E-mail</label>
+								<p  class="detail-text">{{ agent.email }}</p>
+							</div>
+							<span flex></span>
+						</div>
+					</div>
+				</div>
+			</md-list-item>
+			<!-- CONYUGE -->
+			<md-divider ></md-divider>
+			<md-list-item ng-dblclick="editThis( 'conyuge' )" style="cursor: pointer; padding: 0px;" class="animated">
+				<div layout="column" flex>
+					<div id="conyuge-inputs" class="animate-inputs is-selected" ng-show="sections[3].editable" click-outside="closeThis( 'conyuge' )" layout layout-padding>
+						<div layout="column" flex>
+							<label style="margin-top: 8px;">Cónyuge</label>
+							<div layout>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Nombre</label>
+										<input type="text" ng-model="agent.spouse.name" />
+									</md-input-container>
+									<md-input-container>
+										<label>Ocupación</label>
+										<input type="text" ng-model="agent.spouse.education" />
+									</md-input-container>
+									<md-input-container>
+										<label>Teléfono</label>
+										<input type="text" ng-model="agent.spouse.telephone" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Apellido paterno</label>
+										<input type="text" ng-model="agent.spouse.lastname_1" />
+									</md-input-container>
+									<md-input-container>
+										<label>Fecha de nacimiento</label>
+										<input type="text" ng-model="agent.spouse.birthdate" />
+									</md-input-container>
+									<md-input-container>
+										<label>Celular</label>
+										<input type="text" ng-model="agent.spouse.mobile" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Apellido materno</label>
+										<input type="text" ng-model="agent.spouse.lastname_2" />
+									</md-input-container>
+									<md-input-container>
+										<label>Fecha de aniversario</label>
+										<input type="text" ng-model="agent.spouse.anniversary_date" />
+									</md-input-container>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="animate-details" ng-show="!sections[3].editable" layout="column" layout-padding flex>
+						<label style="margin-top: 8px;">Cónyuge</label>
+						<div layout flex>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Nombre</label>
+									<p  class="detail-text">{{agent.spouse.name + ' ' + agent.spouse.lastname_1 + ' ' + agent.spouse.lastname_2 }}</p>
+								</div>
+								<div layout="column">
+									<label class="detail-label">Teléfono</label>
+									<p class="detail-text">{{agent.spouse.telephone}}</p>
+								</div>
+							</div>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Ocupación</label>
+									<p  class="detail-text">{{agent.spouse.education}}</p>
+								</div>
+								<div layout="column">
+									<label class="detail-label">Celular</label>
+									<p class="detail-text">{{agent.spouse.mobile}}</p>
+								</div>
+							</div>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Fecha de nacimiento</label>
+									<p  class="detail-text">{{agent.spouse.birthdate}}</p>
+								</div>
+							</div>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Fecha de aniversario</label>
+									<p  class="detail-text">{{agent.spouse.anniversary_date}}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</md-list-item>
+			<!-- HIJOS -->
+			<md-divider ></md-divider>
+			<md-list-item ng-dblclick="editThis( 'hijos' )" style="cursor: pointer; padding: 0px;" class="animated">
+				<div layout="column" flex>
+					<div id="hijos-inputs" class="animate-inputs is-selected" ng-show="sections[4].editable" click-outside="closeThis( 'hijos' )" layout layout-padding>
+						<div layout="column" flex>
+							<label style="margin-top: 8px;">Hijos</label>
+							<div ng-repeat="child in agent.children track by $index" layout>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Nombre</label>
+										<input type="text" ng-model="child.name" />
+									</md-input-container>
+									<md-input-container>
+										<label>Grado escolar/Ocupación</label>
+										<input type="text" ng-model="child.education" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Apellido paterno</label>
+										<input type="text" ng-model="child.lastname_1" />
+									</md-input-container>
+									<md-input-container>
+										<label>Institución actual</label>
+										<input type="text" ng-model="child.current_place" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Apellido materno</label>
+										<input type="text" ng-model="child.lastname_2" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Fecha de nacimiento</label>
+										<input type="text" ng-model="child.birthdate" />
+									</md-input-container>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="animate-details" ng-show="!sections[4].editable" layout="column" layout-padding flex>
+						<label style="margin-top: 8px;">Hijos</label>
+						<div ng-repeat="child in agent.children track by $index" layout flex>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Nombre</label>
+									<p  class="detail-text">{{ child.name + ' ' + child.lastname_1 + ' ' + child.lastname_2 }}</p>
+								</div>
+							</div>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Fecha de nacimiento</label>
+									<p  class="detail-text">{{ child.birthdate }}</p>
+								</div>
+							</div>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Grado escolar/Ocupación</label>
+									<p  class="detail-text">{{ child.education }}</p>
+								</div>
+							</div>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Institución actual</label>
+									<p  class="detail-text">{{ child.current_place }}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</md-list-item>
+			<!-- VEHICULOS -->
+			<md-divider ></md-divider>
+			<md-list-item ng-dblclick="editThis( 'vehiculos' )" style="cursor: pointer; padding: 0px;" class="animated">
+				<div layout="column" flex>
+					<div id="vehiculos-inputs" class="animate-inputs is-selected" ng-show="sections[5].editable" click-outside="closeThis( 'vehiculos' )" layout layout-padding>
+						<div layout="column" flex>
+							<label style="margin-top: 8px;">Vehículos</label>
+							<div ng-repeat="vehicle in agent.vehicles track by $index" layout>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Marca</label>
+										<input type="text" ng-model="vehicle.brand" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Modelo</label>
+										<input type="text" ng-model="vehicle.model" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Año</label>
+										<input type="text" ng-model="vehicle.year" />
+									</md-input-container>
+								</div>
+								<span flex></span>
+							</div>
+						</div>
+					</div>
+					<div class="animate-details" ng-show="!sections[5].editable" layout="column" layout-padding flex>
+						<label style="margin-top: 8px;">Vehículos</label>
+						<div ng-repeat="vehicle in agent.vehicles track by $index" layout flex>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Marca</label>
+									<p  class="detail-text">{{ vehicle.brand }}</p>
+								</div>
+							</div>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Modelo</label>
+									<p  class="detail-text">{{ vehicle.model }}</p>
+								</div>
+							</div>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Año</label>
+									<p  class="detail-text">{{ vehicle.year }}</p>
+								</div>
+							</div>
+							<span flex></span>
+						</div>
+					</div>
+				</div>
+			</md-list-item>
+			<!-- ECONOMIA -->
+			<md-divider ></md-divider>
+			<md-list-item ng-dblclick="editThis( 'economia' )" style="cursor: pointer; padding: 0px;" class="animated">
+				<div layout="column" flex>
+					<div id="economia-inputs" class="animate-inputs is-selected" ng-show="sections[6].editable" click-outside="closeThis( 'economia' )" layout layout-padding>
+						<div layout="column" flex>
+							<label style="margin-top: 8px;">Economía</label>
+							<div layout>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Ocupación anterior</label>
+										<input type="text" ng-model="agent.last_job" />
+									</md-input-container>
+									<md-input-container>
+										<label>Ocupación actual</label>
+										<input type="text" ng-model="agent.current_job" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Departamento anterior</label>
+										<input type="text" ng-model="agent.last_department" />
+									</md-input-container>
+									<md-input-container>
+										<label>Departamento actual</label>
+										<input type="text" ng-model="agent.current_department" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Ingreso mensual anterior</label>
+										<input type="number" ng-model="agent.last_monthly_income" />
+									</md-input-container>
+									<md-input-container>
+										<label>Ingreso mensual actual</label>
+										<input type="number" ng-model="agent.current_monthly_income" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Gastos mensuales</label>
+										<input type="number" ng-model="agent.monthly_expenses" />
+									</md-input-container>
+									<md-input-container>
+										<label>Colchón económico</label>
+										<input type="number" ng-model="agent.savings" />
+									</md-input-container>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="animate-details" ng-show="!sections[6].editable" layout="column" layout-padding flex>
+						<label style="margin-top: 8px;">Economía</label>
+						<div layout flex>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Ocupación anterior</label>
+									<p  class="detail-text">{{ agent.last_job }}</p>
+								</div>
+								<div layout="column">
+									<label  class="detail-label">Ocupación actual</label>
+									<p  class="detail-text">{{ agent.current_job }}</p>
+								</div>
+							</div>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Departamento anterior</label>
+									<p  class="detail-text">{{ agent.last_department }}</p>
+								</div>
+								<div layout="column">
+									<label  class="detail-label">Departamento actual</label>
+									<p  class="detail-text">{{ agent.current_department }}</p>
+								</div>
+							</div>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Ingreso mensual anterior</label>
+									<p  class="detail-text">{{ agent.last_monthly_income | currency }}</p>
+								</div>
+								<div layout="column">
+									<label  class="detail-label">Ingreso mensual actual</label>
+									<p  class="detail-text">{{ agent.current_monthly_income | currency }}</p>
+								</div>
+							</div>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Gastos mensuales</label>
+									<p  class="detail-text">{{ agent.monthly_expenses | currency }}</p>
+								</div>
+								<div layout="column">
+									<label  class="detail-label">Colchón económico</label>
+									<p  class="detail-text">{{ agent.savings | currency }}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</md-list-item>
+			<!-- INMUEBLES -->
+			<md-divider ></md-divider>
+			<md-list-item ng-dblclick="editThis( 'inmuebles' )" style="cursor: pointer; padding: 0px;" class="animated">
+				<div layout="column" flex>
+					<div id="inmuebles-inputs" class="animate-inputs is-selected" ng-show="sections[7].editable" click-outside="closeThis( 'inmuebles' )" layout layout-padding>
+						<div layout="column" flex>
+							<label style="margin-top: 8px;">Inmuebles</label>
+							<div layout>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Casa habitación</label>
+										<input type="text" ng-model="agent.housing" />
+									</md-input-container>
+								</div>
+								<div layout="column" flex>
+									<md-input-container>
+										<label>Pago o renta mensual</label>
+										<input type="number" ng-model="agent.monthly_housing_expense" />
+									</md-input-container>
+								</div>
+								<span flex></span>
+								<span flex></span>
+							</div>
+						</div>
+					</div>
+					<div class="animate-details" ng-show="!sections[7].editable" layout="column" layout-padding flex>
+						<label style="margin-top: 8px;">Inmuebles</label>
+						<div layout flex>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Casa habitación</label>
+									<p  class="detail-text">{{ agent.housing }}</p>
+								</div>
+							</div>
+							<div layout="column" flex>
+								<div layout="column">
+									<label  class="detail-label">Pago o renta mensual</label>
+									<p  class="detail-text">{{ agent.monthly_housing_expense | currency}}</p>
+								</div>
+							</div>
+							<span flex></span>
+							<span flex></span>
+						</div>
+					</div>
+				</div>
+			</md-list-item>
+		</md-list>
+	</md-card-content>
+</md-card>

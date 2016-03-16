@@ -1,0 +1,58 @@
+<div ng-controller="agentController as vm">
+	<md-toolbar class="md-toolbar-menu" flex style="height: 149px; position: fixed; top: 0" layout="column">
+		<div layout flex>
+			<div layout layout-align="start center" flex="80">
+				<h2 class="md-toolbar-tools">Fernando Garza Gómez</h2>
+			</div>
+			<div layout layout-align="end center" flex="20">
+				<md-button class="md-icon-button">
+					<i class="material-icons">search</i>
+				</md-button>
+				<md-button class="md-icon-button">
+					<i class="material-icons">more_vert</i>
+				</md-button>
+			</div>
+		</div>
+		<div flex layout layout-align="start center">
+			<md-button class="md-secondary" ui-sref="agente.perfil">
+				Perfil
+			</md-button>
+			<md-button class="md-secondary" ui-sref="agente.recluta">
+				Recluta
+			</md-button>
+			<md-button class="md-secondary" ui-sref="agente.desarrollo_dashboard">
+				Desarrollo
+			</md-button>
+		</div>
+	</md-toolbar>
+	<div ui-view="" style="margin-top: 155px;"></div>
+	<!--
+	<md-tabs md-border-bottom class="tab-fix" style="border-radius: 0px">
+		<md-tab>
+			<md-tab-label>
+				perfil
+			</md-tab-label>
+			<md-tab-body layout layout-margin>
+				<div ui-view="profile"></div>
+			</md-tab-body>
+		</md-tab>
+		<md-tab>
+			<md-tab-label>
+				recluta
+			</md-tab-label>
+			<md-tab-body>
+				<div ui-view="recruit"></div>
+			</md-tab-body>
+		</md-tab>
+		<md-tab>
+			<md-tab-label>
+				desarrollo
+			</md-tab-label>
+			<md-tab-body>
+				<div ui-view="desarrollo"></div>
+				<div ui-view="ag2"></div>
+			</md-tab-body>
+		</md-tab>
+	</md-tabs>
+-->
+</div>

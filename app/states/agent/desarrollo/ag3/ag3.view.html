@@ -1,0 +1,152 @@
+<div ng-controller="ag3Controller as vm">
+  <md-card>
+    <md-card-header>
+      <div layout flex>
+        <div layout layout-align="start center" flex="80">
+          <h1 class="md-toolbar-tools">AG3</h1>
+        </div>
+        <div layout layout-align="end center" flex="20">
+          <md-button class="md-icon-button" ng-click="vm.click(true)">
+            <i class="material-icons">search</i>
+          </md-button>
+          <md-button class="md-icon-button" ui-sref="agente.desarrollo_dashboard">
+            <md-icon md-font-set="material-icons">close</md-icon>
+          </md-button>
+        </div>
+      </div>
+    </md-card-header>
+    <md-card-content>
+     <h6>AG3 CONSULTA</h6>
+      <div flex="100" layout layout-align="start center">
+        <div layout layout-align="center center" flex="100">
+          <!--Grafica de contactos-->
+		  <!--
+		  <div id="container" style="min-width: 100px; max-width: 250px; height: 250px; margin: 0 auto">Placeholder for chart</div>
+	  -->
+	  <div id="firstAreaChart" style="min-width: 100px; max-width: 900px; margin: 0 auto">Placeholder for chart</div>
+
+        </div>
+      </div>
+      <md-divider></md-divider>
+      <div layout layout-align="start center" flex="100">
+        <div layout layout-align="center center" flex="40">
+            <h6>SEMANAS ACTUALES</h6>
+        </div>
+        <div layout layout-align="end center" flex="10">
+            <!--Vacio para la separación-->
+        </div>
+        <div layout layout-align="center center" flex="40">
+            <h6>ESTADISTICAS ACTUALES</h6>
+        </div>
+      </div>
+          <md-divider></md-divider>
+      <div layout layout-align="center center" flex="100">
+        <div layout layout-align="start center" flex="50">
+          <!--Lista por crear-->
+          <md-list flex="100">
+            <md-subheader class="md-no-sticky">
+              <div flex="100" layout layout-align="start center">
+                <div flex="50" layout layout-align="start center"> Parametro </div>
+                <div flex="25" layout layout-align="start center"> Actual</div>
+                <div flex="25" layout layout-align="start center"> Pasado </div>
+              </div>
+            </md-subheader>
+            <!--se termina subheader y empieza la lista -->
+           <md-list-item ng-repeat="lissemana in vm.lissemana">
+             <!--<tr ng-repeat="friend in friends | orderBy:predicate:reverse">-->
+             <div flex="100" layout layout-align="start center">
+               <div flex="50" layout layout-align="start center">
+                 <p> {{ lissemana.Parametro }} </p>
+               </div>
+               <div flex="25" layout layout-align="start center">
+                 <p>{{lissemana.Actual}}</p>
+               </div>
+               <div flex="25" layout layout-align="start center">
+                 <p> {{ lissemana.Pasado }} </p>
+               </div>
+             </div>
+             <md-divider></md-divider>
+           </md-list-item>
+         </md-list>
+        </div>
+        <div layout layout-align="end center" flex="50">
+          <!--Grafica de barras horizontales-->
+		  <div id="sidebarChart" style="min-width: 100px; max-width: 400px; margin: 0 auto">Placeholder for chart</div>
+        </div>
+      </div>
+          <h6>DESEMPEÑO</h6>
+          <md-divider></md-divider>
+      <div layout flex>
+        <div layout layout-align="center center" flex="100">
+          <!--Grafica de procentajes-->
+		  <div id="secondAreaChart" style="min-width: 100px; max-width: 900px; margin: 0 auto">Placeholder for chart</div>
+
+        </div>
+      </div>
+      <div layout layout-align="start center" flex="100">
+        <div layout layout-align="center center" flex="40">
+            <h6>GENERAL</h6>
+        </div>
+        <div layout layout-align="end center" flex="10">
+            <!--Vacio para la separación-->
+        </div>
+        <div layout layout-align="center center" flex="40">
+            <h6>SCORE</h6>
+        </div>
+      </div>
+      <md-divider></md-divider>
+      <div layout flex="100">
+        <div layout layout-align="start center" flex="50">
+          <!--Lista por crear-->
+          <md-list flex="100">
+            <md-subheader class="md-no-sticky">
+              <div flex="100" layout layout-align="start center">
+                <div flex="50" layout layout-align="start center"> Parametro </div>
+                <div flex="25" layout layout-align="start center"> Suma</div>
+                <div flex="25" layout layout-align="start center"> Promedio </div>
+              </div>
+            </md-subheader>
+            <!--se termina subheader y empieza la lista -->
+           <md-list-item ng-repeat="lissemana in vm.lissemana">
+             <!--<tr ng-repeat="friend in friends | orderBy:predicate:reverse">-->
+             <div flex="100" layout layout-align="start center">
+               <div flex="50" layout layout-align="start center">
+                 <p> {{ lissemana.Parametro }} </p>
+               </div>
+               <div flex="25" layout layout-align="start center">
+                 <p>{{lissemana.Suma}}</p>
+               </div>
+               <div flex="25" layout layout-align="start center">
+                 <p> {{ lissemana.Promedio }} </p>
+               </div>
+             </div>
+             <md-divider></md-divider>
+           </md-list-item>
+         </md-list>
+        </div>
+        <div layout layout-align="end center" flex="50">
+          <!--promedios-->
+          <md-content class="md-padding" layout-xs="column" layout="row">
+            <div layout="column" layout-align="center end">
+              <md-card>
+                <md-card-title>
+                  <md-card-title-text>
+                    <span class="md-headline">273</span>
+                    <span class="md-subhead">Puntos promedio semanales</span>
+                  </md-card-title-text>
+                </md-card-title>
+              </md-card>
+              <md-card>
+                <md-card-title>
+                  <md-card-title-text>
+                    <span class="md-headline">≈55</span>
+                    <span class="md-subhead">Puntos promedio semanales</span>
+                  </md-card-title-text>
+                </md-card-title>
+              </md-card>
+            </md-content>
+          </div>
+        </div>
+      </md-card-content>
+ </md-card>
+</div>

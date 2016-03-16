@@ -1,0 +1,57 @@
+<md-dialog aria-label="List dialog">
+  <md-dialog-content layout-padding>
+    <label><h1 class="md-toolbar-tools">Editar compromiso</h1></label>
+      <div layout="column" flex="45">
+        <md-input-container>
+          <label>Fecha</label>
+          <input ng-model="vm.persona.fecha"><hr/>
+        </md-input-container>
+      </div>
+      <div layout="column" flex="100">
+        <md-input-container>
+          <label>Tema</label>
+          <input ng-model="vm.persona.tema"><hr/>
+        </md-input-container>
+      </div>
+      <div layout="row">
+        <md-input-container flex="45">
+          <label>Ejecutivo</label>
+          <input ng-model="vm.persona.ejecutivo"><hr/>
+        </md-input-container>
+        <md-input-container flex="45" flex-offset="10">
+          <label>Asesor</label>
+          <input ng-model="vm.persona.asesor"><hr/>
+        </md-input-container>
+      </div>
+      <div layout="row">
+        <md-input-container flex="45">
+          <label>Compromiso</label>
+          <input ng-model="vm.persona.compromisouno"><hr/>
+        </md-input-container>
+        <md-input-container flex="45" flex-offset="10">
+          <label>Compromiso</label>
+          <input ng-model="vm.persona.compromisodos"><hr/>
+        </md-input-container>
+      </div>
+      <div layout="row">
+        <md-input-container flex="45">
+          <label>Fecha Cumplimiento</label>
+          <input ng-model="vm.persona.fcumuno"><hr/>
+        </md-input-container>
+        <md-input-container flex="45" flex-offset="10">
+          <label>Fecha Cumplimiento</label>
+          <input ng-model="vm.persona.fcumdos"><hr/>
+        </md-input-container>
+      </div>
+  </md-dialog-content>
+  <md-dialog-actions>
+    <div layout layout-align="end center" flex="40">
+      <md-button ng-click="vm.cancelDialog()" class="md-primary">
+      CANCELAR
+      </md-button>
+      <md-button ng-click="vm.aceptDialog()" class="md-primary">
+      GUARDAR
+      </md-button>
+    </div>
+  </md-dialog-actions>
+</md-dialog>
