@@ -1,7 +1,7 @@
 <div ng-controller="oiaController as vm">
   <md-card>
     <md-card-header>
-      <div layout flex>
+      <div layout flex flex style="height:64px;">
         <div layout layout-align="start center" flex="60">
           <h1 class="md-toolbar-tools">OIA Lista</h1>
         </div>
@@ -49,6 +49,12 @@
          <md-divider></md-divider>
        </md-list-item>
      </md-list>
+     <div flex="100" flex style="position:fixed;">
+       <h1>HOLA MUNDO</h1>
+     </div>
     </md-card-content>
   </md-card>
+  <md-button ng-click="vm.newDialogPOP($event)" class="md-fab md-accent" style="position: fixed; right:50px; bottom:10px" ui-sref="agente.desarrollo_oiaNuevo">
+    <md-icon md-font-set="material-icons">add</md-icon>
+  </md-button>
 </div>

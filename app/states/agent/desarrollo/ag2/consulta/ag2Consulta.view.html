@@ -6,8 +6,12 @@
           <h1 class="md-toolbar-tools">AG2 Consulta</h1>
         </div>
         <div layout layout-align="end center" flex="40">
-              <md-button>EDITAR</md-button>
-              <md-button>BORRAR</md-button>
+          <md-button class="md-icon-button">
+            <md-icon class="material-icons">delete</m-icon>
+          </md-button>
+          <md-button class="md-icon-button">
+            <md-icon class="material-icons">edit</m-icon>
+          </md-button>
           <md-button class="md-icon-button" ui-sref="agente.desarrollo_ag2">
             <md-icon class="material-icons">close</m-icon>
           </md-button>
@@ -17,120 +21,244 @@
     <md-divider></md-divider>
     <md-card-content>
       <h5>Información personal</h5>
-       <div flex="100" layout layout-align="start start">
-           <div layout layout-align="start start" flex="25">
-             <div layout="column">
-               <label class="detail-label">Cliente</label>
-               <p  class="detail-text">{{vm.lista.cliente}}</p>
-               <label class="detail-label">Fecha</label>
-               <p  class="detail-text">{{vm.lista.fecha}}</p>
-               <label class="detail-label">Teléfono</label>
-               <p  class="detail-text">{{vm.lista.telefono}}</p>
-               <label class="detail-label">Sexo</label>
-               <p  class="detail-text">{{vm.lista.sexo}}</p>
-            </div>
-           </div>
-           <div layout layout-align="start start" flex="25">
-             <div layout="column">
-               <label class="detail-label">Dependientes</label>
-               <p  class="detail-text">{{vm.lista.dependientes}}</p>
-               <label class="detail-label">Edad</label>
-               <p  class="detail-text">{{vm.lista.edad}}</p>
-               <label class="detail-label">Estado Civil</label>
-               <p  class="detail-text">{{vm.lista.ecivil}}</p>
-               <label class="detail-label">Empleado</label>
-               <p  class="detail-text">{{vm.lista.piempleado}}</p>
+             <div layout="row" flex style="height:64px;">
+               <md-input-container flex="30" >
+                 <label>Cliente</label>
+                 <input ng-model="vm.lista.cliente"><hr/>
+               </md-input-container>
+               <md-input-container class="md-block" flex-gt-sm flex="30" flex-offset="5">
+                 <label>Sexo</label>
+                  <md-select ng-model="vm.lista.sexo">
+                    <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                      {{state.abbrev}}
+                    </md-option>
+                  </md-select>
+                </md-input-container>
+               <md-input-container flex="30" flex-offset="5">
+                 <label>Ocupación</label>
+                 <input ng-model="vm.lista.ocupacion"><hr/>
+               </md-input-container>
              </div>
-           </div>
-           <div layout layout-align="start start" flex="25">
-             <div layout="column">
-               <label class="detail-label">Ocupación</label>
-               <p  class="detail-text">{{vm.lista.ocupacion}}</p>
-               <label class="detail-label">Empresa</label>
-               <p  class="detail-text">{{vm.lista.empresa}}</p>
-               <label class="detail-label">Ingresos Mensuales</label>
-               <p  class="detail-text">{{vm.lista.ingmensuales}}</p>
-               <label class="detail-label">Fuente</label>
-               <p  class="detail-text">{{vm.lista.fuente}}</p>
+
+             <div layout="row" flex style="height:64px;">
+               <md-input-container class="md-block" flex-gt-sm flex="30" >
+                 <label>Fecha</label>
+                  <md-select ng-model="vm.lista.fecha">
+                    <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                      {{state.abbrev}}
+                    </md-option>
+                  </md-select>
+                </md-input-container>
+               <md-input-container class="md-block" flex-gt-sm flex="30" flex-offset="5">
+                 <label>Dependientes</label>
+                  <md-select ng-model="vm.lista.dependientes">
+                    <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                      {{state.abbrev}}
+                    </md-option>
+                  </md-select>
+                </md-input-container>
+               <md-input-container flex="30" flex-offset="5">
+                 <label>Empresa</label>
+                 <input ng-model="vm.lista.empresa"><hr/>
+               </md-input-container>
              </div>
-           </div>
-           <div layout layout-align="start start" flex="25" >
-             <div layout="column">
-               <label class="detail-label">Referidos Obtenidos</label>
-               <p  class="detail-text">{{vm.lista.refobtenidos}}</p>
-               <label class="detail-label">Dirección</label>
-               <p  class="detail-text">{{vm.lista.direccion}}</p>
+
+             <div layout="row" flex style="height:64px;">
+               <md-input-container flex="30" >
+                 <label>Dirección</label>
+                 <textarea ng-model="vm.lista.direccion" rows="3" md-select-on-focus></textarea><hr/>
+               </md-input-container>
+               <md-input-container flex="30" flex-offset="5">
+                 <label>Edad</label>
+                 <input ng-model="vm.lista.edad"><hr/>
+               </md-input-container>
+               <md-input-container flex="30" flex-offset="5">
+                 <label>Ingresos Mensuales</label>
+                 <input ng-model="vm.lista.ingmensuales"><hr/>
+               </md-input-container>
              </div>
-           </div>
-       </div>
+
+             <div layout="row" flex style="height:64px;">
+               <md-input-container flex="30" >
+               </md-input-container>
+               <md-input-container class="md-block" flex-gt-sm flex="30" flex-offset="5">
+                 <label>Estado Civil</label>
+                  <md-select ng-model="vm.lista.ecivil">
+                    <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                      {{state.abbrev}}
+                    </md-option>
+                  </md-select>
+                </md-input-container>
+               <md-input-container flex="30" flex-offset="5">
+                 <label>Fuente</label>
+                 <input ng-model="vm.lista.fuente"><hr/>
+               </md-input-container>
+             </div>
+
+             <div layout="row" flex style="height:64px;">
+               <md-input-container flex="30" >
+                 <label>Teléfono</label>
+                 <input ng-model="vm.lista.telefono"><hr/>
+               </md-input-container>
+               <md-input-container class="md-block" flex-gt-sm flex="30" flex-offset="5">
+                 <label>Empleado</label>
+                  <md-select ng-model="vm.lista.piempleado">
+                    <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                      {{state.abbrev}}
+                    </md-option>
+                  </md-select>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm flex="30" flex-offset="5">
+                  <label>Referidos Obtenidos</label>
+                   <md-select ng-model="vm.lista.refobtenidos">
+                     <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                       {{state.abbrev}}
+                     </md-option>
+                   </md-select>
+                 </md-input-container>
+             </div>
+
+<!-- segunda mitad -->
+
       <h5>Información de Solicitud</h5>
-       <div layout layout-align="start start" flex="100">
-          <div layout layout-align="start start" flex="25" layout-align="up">
-            <div layout="column">
-              <label class="detail-label">Necesidad cubierta</label>
-              <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.wuno">Protección</md-checkbox></p>
-              <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.wdos">Salud</md-checkbox></p>
-              <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.wtres">Acumulación</md-checkbox></p>
-              <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.wcuatro">Retiro</md-checkbox></p>
-              <label class="detail-label">Fecha de ingreso solicitud</label>
-              <p  class="detail-text">{{vm.lista.fechais}}</p>
-              <label class="detail-label">Fecha de examen médico</label>
-              <p  class="detail-text">{{vm.lista.fechaem}}</p>
-              <label class="detail-label">Producto vendido</label>
-              <p  class="detail-text">{{vm.lista.pvendido}}</p>
-            </div>
+      <div layout="row" flex style="height:64px;">
+        <div flex="30">
+          <label class="detail-label">Necesidad cubierta</label>
+          <div layout="row" flex style="margin-top:15px;">
+            <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.wuno">Protección</md-checkbox></p>
+            <p  class="detail-text" style="margin-left:15px;"><md-checkbox class="md-secondary" ng-model="lista.wdos">Salud</md-checkbox></p>
           </div>
-          <div layout layout-align="start start" flex="25">
-            <div layout="column">
-              <label class="detail-label">Suma asegurada</label>
-              <p  class="detail-text">{{vm.lista.sumaas}}</p>
-              <label class="detail-label">Moneda</label>
-              <p  class="detail-text">{{vm.lista.moneda}}</p>
-              <label class="detail-label">Paridad</label>
-              <p  class="detail-text">{{vm.lista.paridad}}</p>
-              <label class="detail-label">Comisiones estimadas 1er año</label>
-              <p  class="detail-text">{{vm.lista.comisiones}}</p>
-              <label class="detail-label">Fecha de pago</label>
-              <p  class="detail-text">{{vm.lista.fechap}}</p>
-              <label class="detail-label">Fecha de entrega</label>
-              <p  class="detail-text">{{vm.lista.fechae}}</p>
-            </div>
+          <div layout="row">
+            <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.wtres">Acumulación</md-checkbox></p>
+            <p  class="detail-text" style="margin-left:9px"><md-checkbox class="md-secondary" ng-model="lista.wcuatro">Retiro</md-checkbox></p>
           </div>
-          <div layout layout-align="start start" flex="25">
-            <div layout="column">
-              <label class="detail-label">Conducto de cobro</label>
-              <p  class="detail-text">{{vm.lista.conducto}}</p>
-              <label class="detail-label">Forma de pago</label>
-              <p  class="detail-text">{{vm.lista.formap}}</p>
-              <label class="detail-label">Prima anualizada</label>
-              <p  class="detail-text">{{vm.lista.prima}}</p>
-              <label class="detail-label"># Póliza</label>
-              <p  class="detail-text">{{vm.lista.numpoliza}}</p>
-              <label class="detail-label">Fecha de seguimiento</label>
-              <p  class="detail-text">{{vm.lista.fechas}}</p>
-            </div>
+        </div>
+        <md-input-container flex="30" flex-offset="5">
+          <label>Suma Asegurada</label>
+          <input ng-model="vm.lista.sumaas"><hr/>
+        </md-input-container>
+        <md-input-container flex="30" flex-offset="5">
+          <label>Prima Anualizada</label>
+          <input ng-model="vm.lista.prima"><hr/>
+        </md-input-container>
+      </div>
+
+      <div layout="row" flex style="height:64px;">
+        <md-input-container flex="30">
+        </md-input-container>
+        <md-input-container flex="30" flex-offset="5">
+          <label>Paridad</label>
+          <input ng-model="vm.lista.paridad"><hr/>
+        </md-input-container>
+        <div flex="30" flex-offset="5">
+          <label class="detail-label">Necesidad cubierta</label>
+          <div layout="row" flex style="margin-top:15px;">
+            <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.tuno">Protección</md-checkbox></p>
+            <p  class="detail-text" style="margin-left:15px;"><md-checkbox class="md-secondary" ng-model="lista.tdos">Salud</md-checkbox></p>
           </div>
-          <div layout layout-align="start start" flex="25">
-            <div layout="column">
-              <label class="detail-label">Necesidades futuras</label>
-              <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.tuno">Protección</md-checkbox></p>
-              <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.tdos">Salud</md-checkbox></p>
-              <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.ttres">Acumulación</md-checkbox></p>
-              <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.tcuatro">Retiro</md-checkbox></p>
-              <label class="detail-label">Comentarios</label>
-              <p  class="detail-text">{{vm.lista.comentarios}}</p>
-            </div>
+          <div layout="row">
+            <p  class="detail-text"><md-checkbox class="md-secondary" ng-model="lista.ttres">Acumulación</md-checkbox></p>
+            <p  class="detail-text" style="margin-left:9px;"><md-checkbox class="md-secondary" ng-model="lista.tcuatro">Retiro</md-checkbox></p>
           </div>
-       </div>
-       <!--
-       <div flex="100" layout layout-align="start center">
-         <div flex="60" layout layout-align="start center">
-         </div>
-         <div flex="40" layout layout-align="end end">
-           <md-button>EDITAR</md-button>
-           <md-button>BORRAR</md-button>
-         </div>
-       </div>-->
+        </div>
+      </div>
+
+      <div layout="row" flex style="height:64px;">
+        <md-input-container class="md-block" flex-gt-sm flex="30">
+          <label>Fecha de Ingreso Solicitud</label>
+           <md-select ng-model="vm.lista.fechais">
+             <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+               {{state.abbrev}}
+             </md-option>
+           </md-select>
+         </md-input-container>
+         <md-input-container class="md-block" flex-gt-sm flex="30" flex-offset="5">
+           <label>Fecha de Pago</label>
+            <md-select ng-model="vm.lista.fechap">
+              <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                {{state.abbrev}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+        <md-input-container flex="30" flex-offset="5">
+        </md-input-container>
+      </div>
+
+      <div layout="row" flex style="height:64px;">
+        <md-input-container class="md-block" flex-gt-sm flex="30">
+          <label>Fecha de Examen Médico</label>
+           <md-select ng-model="vm.lista.fechaem">
+             <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+               {{state.abbrev}}
+             </md-option>
+           </md-select>
+         </md-input-container>
+         <md-input-container class="md-block" flex-gt-sm flex="30" flex-offset="5">
+           <label>Fecha de Entrega</label>
+            <md-select ng-model="vm.lista.fechae">
+              <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                {{state.abbrev}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm flex="30" flex-offset="5">
+            <label>Fecha de Seguimiento</label>
+             <md-select ng-model="vm.lista.fechas">
+               <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                 {{state.abbrev}}
+               </md-option>
+             </md-select>
+           </md-input-container>
+      </div>
+
+      <div layout="row" flex style="height:64px;">
+        <md-input-container class="md-block" flex-gt-sm flex="30">
+          <label>Producto Vendido</label>
+           <md-select ng-model="vm.lista.pvendido">
+             <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+               {{state.abbrev}}
+             </md-option>
+           </md-select>
+         </md-input-container>
+         <md-input-container class="md-block" flex-gt-sm flex="30" flex-offset="5">
+           <label>Conducto de Cobro</label>
+            <md-select ng-model="vm.lista.conducto">
+              <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                {{state.abbrev}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <md-input-container flex="30" flex-offset="5">
+            <label>Comentarios</label>
+            <textarea ng-model="vm.lista.comentarios" rows="3" md-select-on-focus></textarea><hr/>
+          </md-input-container>
+      </div>
+
+      <div layout="row" flex style="height:64px;">
+        <md-input-container flex="30">
+          <label># Póliza</label>
+          <input ng-model="vm.lista.numpoliza"><hr/>
+        </md-input-container>
+        <md-input-container flex="30" flex-offset="5">
+          <label>Forma de Pago</label>
+          <input ng-model="vm.lista.formap"><hr/>
+        </md-input-container>
+        <md-input-container flex="30" flex-offset="5">
+        </md-input-container>
+      </div>
+
+      <div layout="row" flex style="height:64px;">
+        <md-input-container flex="30">
+          <label>Moneda</label>
+          <input ng-model="vm.lista.moneda"><hr/>
+        </md-input-container>
+        <md-input-container flex="30" flex-offset="5">
+          <label>Comisiones estimadas 1er año</label>
+          <input ng-model="vm.lista.comisiones"><hr/>
+        </md-input-container>
+        <md-input-container flex="30" flex-offset="5">
+        </md-input-container>
+      </div>
     </md-card-content>
   </md-card>
 </div>

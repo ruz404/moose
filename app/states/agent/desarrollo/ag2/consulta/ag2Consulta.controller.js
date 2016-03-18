@@ -8,7 +8,7 @@ function ag2ConsultaController(){
   vm.lista = {cliente: "Alejandra María Sánchez Abia", fecha:"24/12/15", telefono: "8115281739", sexo: "Femenino",
     dependientes:"5", edad: "36", ecivil:"Casado", piempleado:"Profesionista Independiente", ocupacion:"Arquitecta",
     empresa:"N/A", ingmensuales:"$25,000", fuente:"Honorarios", refobtenidos:"4",
-    direccion:"Vereda de las privanzas 912 cp 66277 San Pedro Garza García NL",
+    direccion:"Vereda de las privanzas 912 privanzas 6-7 sector cp 66277 San Pedro Garza García NL México",
     wuno: false, wdos: false, wtres: false, wcuatro:false, fechais:"24/12/15", fechaem:"24/12/15",
     pvendido:"Orvi 360 12p", sumaas:"$500,000", moneda:"MXN", paridad:"$500,000", comisiones:"$100,000",
     fechap:"24/12/15", fechae:"24/12/15", conducto:"Modo de Agente", formap:"Anual", prima:"$500,000",
