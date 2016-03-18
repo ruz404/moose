@@ -1,0 +1,64 @@
+<div ng-controller="oiaConsultaController as vm">
+  <md-card>
+    <md-card-header>
+      <div layout flex>
+        <div layout layout-align="start center" flex="60">
+          <h1 class="md-toolbar-tools">OIA Consulta</h1>
+        </div>
+        <div layout layout-align="end center" flex="40">
+          <md-button class="md-icon-button">
+            <i class="material-icons">delete</i>
+          </md-button>
+          <md-button class="md-icon-button" ui-sref="agente.desarrollo_oiaEdicion">
+            <i class="material-icons">edit</i>
+          </md-button>
+          <md-button class="md-icon-button">
+            <i class="material-icons">close</i>
+          </md-button>
+        </div>
+      </div>
+  </md-card-header>
+  <md-divider></md-divider>
+    <md-card-content>
+    <!-- Estadisticas generales-->
+    <div flex="100" layout layout-align="start center">
+      <div flex="45">
+        <h6>Estadísticas Generales</h6>
+        <md-divider></md-divider>
+      <md-list-item ng-repeat="consulta in vm.consulta">
+        <!--<tr ng-repeat="friend in friends | orderBy:predicate:reverse">-->
+          <div flex="70" layout layout-align="start center">
+            <p> {{ consulta.string }} </p>
+          </div>
+          <div flex="30" layout layout-align="start center">
+            <p>{{consulta.dato}}</p>
+          </div>
+        <md-divider></md-divider>
+      </div>
+      </md-list-item>
+      <div flex="45" flex-offset="10">
+        <h6>Estadísticas Generales</h6>
+        <md-divider></md-divider>
+      <md-list-item ng-repeat="consultados in vm.consultados">
+        <!--<tr ng-repeat="friend in friends | orderBy:predicate:reverse">-->
+          <div flex="70" layout layout-align="start start">
+            <p> {{ consultados.string }} </p>
+          </div>
+          <div flex="30" layout layout-align="center start">
+            <p>{{consultados.dato}}</p>
+          </div>
+        <md-divider></md-divider>
+      </md-list-item>
+    </div>
+    </div>
+    <div flex layout layout-align="start center" flex style="margin:40px 0px 40px;">
+      <div flex="50">
+        <!-- Aquí va la grafica -->
+        <div id="container" style="min-width: 100px; max-width: 250px; height: 250px; margin: 0 auto">Placeholder for chart</div>
+      </div>
+      <div flex="50">
+      </div>
+    </div>
+  </md-card-content>
+  </md-card>
+</div>

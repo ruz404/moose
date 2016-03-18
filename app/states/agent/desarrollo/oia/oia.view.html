@@ -1,7 +1,7 @@
 <div ng-controller="oiaController as vm">
   <md-card>
     <md-card-header>
-      <div layout flex>
+      <div layout flex flex style="height:64px;">
         <div layout layout-align="start center" flex="60">
           <h1 class="md-toolbar-tools">OIA Lista</h1>
         </div>
@@ -12,43 +12,65 @@
         </div>
       </div>
     </md-card-header>
-    <md-card-content>
-      <md-list >
-        <md-subheader class="md-no-sticky">
-          <div layout="columns"  flex layout layout-align="start center">
-            <div flex="25" layout layout-align="start center"> Fecha </div>
-            <div flex="25" layout layout-align="start center"> Semanas de Trabajo
-              <md-button class="md-icon-button" ng-click="vm.ordenarSemanas( 'sem' )">
-                <md-icon ng-show="vm.ordering == 'DESC'" md-set-font="material-icons">arrow_downward</md-icon>
-                <md-icon ng-show="vm.ordering == 'ASC'" md-set-font="material-icons">arrow_upward</md-icon>
-              </md-button>
-              <span class="sortorder" ng-show="predicate === 'sem'" ng-class="{reverse:reverse}"></span>
-              </md-button></div>
-            <div flex="25" layout layout-align="start center"> Objetivos de Ingreso </div>
-            <div flex="25" layout layout-align="start center"> Prima promedio anual </div>
-          </div>
-        </md-subheader>
-        <!--se termina subheader y empieza la lista -->
-        <md-divider></md-divider>
-       <md-list-item ng-repeat="lista in vm.lista">
-         <!--<tr ng-repeat="friend in friends | orderBy:predicate:reverse">-->
-         <div flex="100" layout layout-align="start center">
-           <div flex="25" layout layout-align="start center">
-             <p> {{lista.fecha}}</p>
-           </div>
-           <div flex="25" layout layout-align="start center">
-             <p>{{lista.sem}}</p>
-           </div>
-           <div flex="25" layout layout-align="start center">
-             <p> {{ lista.ob }} </p>
-           </div>
-           <div flex="25" layout layout-align="start center">
-             <p> {{ lista.prima }} </p>
-           </div>
-         </div>
-         <md-divider></md-divider>
-       </md-list-item>
-     </md-list>
+	<md-card-content>
+    	<md-list>
+    		<md-subheader class="md-no-sticky">
+				<div layout="columns"  flex layout layout-align="start center">
+					<div flex="25" layout layout-align="start center">Fecha
+						<md-button class="md-icon-button md-accent" ng-click="vm.ordenarSemanas( 'sem' )">
+							<md-icon ng-show="vm.ordering == 'DESC'" md-set-font="material-icons">arrow_downward</md-icon>
+							<md-icon ng-show="vm.ordering == 'ASC'" md-set-font="material-icons">arrow_upward</md-icon>
+						</md-button>
+					</div>
+					<div flex="25" layout layout-align="start center"> Semanas de Trabajo
+						<md-button class="md-icon-button md-primary" ng-click="vm.ordenarSemanas( 'sem' )">
+							<md-icon ng-show="vm.ordering == 'DESC'" md-set-font="material-icons">arrow_downward</md-icon>
+							<md-icon ng-show="vm.ordering == 'ASC'" md-set-font="material-icons">arrow_upward</md-icon>
+						</md-button>
+						<span class="sortorder" ng-show="predicate === 'sem'" ng-class="{reverse:reverse}"></span>
+					</div>
+					<div flex="25" layout layout-align="start center">Objetivos de Ingreso
+						<md-button class="md-icon-button md-secondary" ng-click="vm.ordenarSemanas( 'sem' )">
+							<md-icon ng-show="vm.ordering == 'DESC'" md-set-font="material-icons">arrow_downward</md-icon>
+							<md-icon ng-show="vm.ordering == 'ASC'" md-set-font="material-icons">arrow_upward</md-icon>
+						</md-button>
+					</div>
+					<div flex="25" layout layout-align="start center"> Prima promedio anual </div>
+				</div>
+        	</md-subheader>
+			<!--se termina subheader y empieza la lista -->
+			<md-divider></md-divider>
+			<div style="overflow: auto; height: 372px;">
+				<md-list-item ng-repeat="lista in vm.lista">
+					<div flex="100" layout layout-align="start center">
+						<div flex="25" layout layout-align="start center">
+							<p> {{lista.fecha}}</p>
+						</div>
+						<div flex="25" layout layout-align="start center">
+							<p>{{lista.sem}}</p>
+						</div>
+						<div flex="25" layout layout-align="start center">
+							<p> {{ lista.ob }} </p>
+						</div>
+						<div flex="25" layout layout-align="start center">
+							<p> {{ lista.prima }} </p>
+						</div>
+					</div>
+					<md-divider></md-divider>
+				</md-list-item>
+				<md-list-item>
+					<span flex></span>
+				</md-list-item>
+			</div>
+		</md-list>
+		<div flex layout layout-align="center center">
+			<md-list-item layout layout-align="center center">
+				<span> 12 Total</span>
+			</md-list-item>
+     </div>
     </md-card-content>
   </md-card>
+  <md-button ng-click="vm.newDialogPOP($event)" class="md-fab md-accent" style="position: fixed; right: 56px; bottom: 28px" ui-sref="agente.desarrollo_oiaNuevo">
+    <md-icon md-font-set="material-icons">add</md-icon>
+  </md-button>
 </div>

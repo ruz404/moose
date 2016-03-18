@@ -161,8 +161,26 @@ config( [ '$stateProvider', '$urlRouterProvider', '$mdThemingProvider', function
     url: '/desarrollo/OIA/nuevo', // se le suma al url del padre = '/home' + '/agent' + '/perfil'
     views: {
       '': {
-        templateUrl: 'states/agent/desarrollo/oia/oia.view.html',
-        controller: 'oiaController',
+        templateUrl: 'states/agent/desarrollo/oiaNuevo/oiaNuevo.view.html',
+        controller: 'oiaNuevoController',
+      },
+    }
+  }).
+  state('agente.desarrollo_oiaConsulta', {
+    url: '/desarrollo/OIA/consulta',
+    views: {
+      '': {
+        templateUrl: 'states/agent/desarrollo/oiaConsulta/oiaConsulta.view.html',
+        controller: 'oiaConsultaController',
+      },
+    }
+  }).
+  state('agente.desarrollo_oiaEdicion', {
+    url: '/desarrollo/OIA/edicion',
+    views: {
+      '': {
+        templateUrl: 'states/agent/desarrollo/oiaEdicion/oiaEdicion.view.html',
+        controller: 'oiaEdicionController',
       },
     }
   }).
