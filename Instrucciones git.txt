@@ -1,0 +1,16 @@
+Instrucciones
+Te vas a la carpeta
+git init
+git clone (liga mia)
+cd / entras a moose
+git remote add upstream (liga de fabri)
+git status
+git checkout -b mov 	//el nombre de mi branch
+git status
+git add .
+git commit -m “comentarios especificos”
+git push origin mov		//lo metí al mio
+git checkout master	//me cambie al master y sali de mov
+git merge mov			//combino master con mov
+git commit -m “comentarios específicos"
+git push origin master
