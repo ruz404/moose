@@ -3,7 +3,22 @@ angular.module('moose').controller('ag2ConsultaController', ag2ConsultaControlle
 ag2ConsultaController.inject$=[];
 
 function ag2ConsultaController(){
-  var vm=this;
+	var vm=this;
+
+	vm.toggleEdicion = toggleEdicion;
+		vm.consulta = true;
+
+	active();
+
+	function active() {
+
+	}
+
+	function toggleEdicion() {
+		vm.consulta = !vm.consulta;
+	}
+
+	// feo de aqui para abajo
 
   vm.lista = {cliente: "Alejandra María Sánchez Abia", fecha:"24/12/15", telefono: "8115281739", sexo: "Femenino",
     dependientes:"5", edad: "36", ecivil:"Casado", piempleado:"Profesionista Independiente", ocupacion:"Arquitecta",

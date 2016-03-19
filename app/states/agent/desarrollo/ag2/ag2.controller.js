@@ -1,9 +1,27 @@
 angular.module( 'moose' ).controller( 'ag2Controller', ag2Controller );
 
-ag2Controller.$inject = [];
+ag2Controller.$inject = [ '$state' ];
 
-function ag2Controller(){
-  var vm = this;
+function ag2Controller( $state ) {
+	var vm = this;
+
+	vm.irADetalle = irADetalle;
+
+
+	active();
+
+	/*********************************/
+
+	function active() {
+
+	}
+
+	function irADetalle() {
+		$state.go( 'agente.ag2_consulta' );
+	}
+
+
+	// feo de aqui para abajo
 
   vm.customer = [
     {cliente: "David Chavez Espejo", poliza:"15184787", producto: "Orvi 12", fechaI: "24-12-2015", sumaAsegurada:"$200,000", prima: "$14,000"},
