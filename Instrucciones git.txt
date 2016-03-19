@@ -1,7 +1,7 @@
 Instrucciones
 Te vas a la carpeta
 git init
-git clone (liga mia)
+git clone (liga mia de mi fork)
 cd / entras a moose
 git remote add upstream (liga de fabri)
 git status
