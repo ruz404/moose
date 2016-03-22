@@ -146,6 +146,26 @@ config( [ '$stateProvider', '$urlRouterProvider', '$mdThemingProvider', function
 			},
 		}
 	}).
+  state( 'agente.ag3_lista', {
+		//parent: 'agente' y 'ag3',
+		url: '/desarrollo/ag3/lista', // se le suma al url del padre = '/home' + '/agent' + '/perfil'
+		views: {
+			'': {
+				templateUrl: 'states/agent/desarrollo/ag3/lista/ag3Lista.view.html',
+				controller: 'ag3ListaController',
+			},
+		}
+	}).
+  state( 'agente.ag3_consulta', {
+    //parent: 'agente' y ag3,
+    url: '/desarrollo/ag3/consulta', // se le suma al url del padre = '/home' + '/agent' + '/perfil'
+    views: {
+      '': {
+        templateUrl: 'states/agent/desarrollo/ag3/consulta/ag3Consulta.view.html',
+        controller: 'ag3ConsultaController',
+      },
+    }
+  }).
 	state( 'agente.desarrollo_oia', {
 		//parent: 'agente',
 		url: '/desarrollo/OIA', // se le suma al url del padre = '/home' + '/agent' + '/perfil'

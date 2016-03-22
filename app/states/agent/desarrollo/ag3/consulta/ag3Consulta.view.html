@@ -1,0 +1,180 @@
+<div ng-controller="ag3ConsultaController as vm"ng-cloak>
+  <md-card>
+    <md-card-header>
+      <div layout flex>
+        <div layout layout-align="start center" flex="80">
+          <h1 class="md-toolbar-tools">Ag3 - Consulta</h1>
+        </div>
+        <!-- botones wt tooltip -->
+        <div layout="row" layout-sm="column" layout-align="end center" flex="40">
+          <md-button class="md-icon-button" aria-label="Eliminar"><md-icon md-font-set="material-icons">delete</i>
+            <md-tooltip md-visible="demo.showTooltip" md-direction="{{demo.tipDirection}}">Eliminar</md-tooltip>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Editar" ng-class="{ 'md-secondary': vm.consulta === true, 'md-primary': vm.consulta === false  }" ng-click="vm.toggleEdicion()">
+            <md-icon class="material-icons">edit</m-icon>
+            <md-tooltip md-visible="demo.showTooltip" md-direction="{{demo.tipDirection}}">Editar</md-tooltip>
+          </md-button>
+          <md-button class="md-icon-button" ui-sref="agente.desarrollo_ag3" aria-label="Cerrar">
+            <md-icon class="material-icons">close</m-icon>
+            <md-tooltip md-visible="demo.showTooltip" md-direction="{{demo.tipDirection}}">Cerrar</md-tooltip>
+          </md-button>
+        </div>
+      </div>
+    </md-card-header>
+    <!-- Contenido de tarjeta -->
+    <md-card-content>
+      <div layout-align="end center">
+        <md-subheader class="md-no-sticky">
+          <md-datepicker ng-model="user.submissionDate" md-placeholder="Ingrese fecha"></md-datepicker>
+        </md-subheader>
+      </div>
+      <!--Se termina subheader y empiezan encabezados -->
+      <div layout layout-align="start center" flex="100">
+        <div layout layout-align="center center" flex="40">
+            <h6>PROSPECTACIÓN</h6>
+        </div>
+        <div layout layout-align="end center" flex="10">
+            <!--Vacio para la separación-->
+        </div>
+        <div layout layout-align="center center" flex="40">
+            <h6>PRODUCTIVIDAD</h6>
+        </div>
+      </div>
+      <md-divider></md-divider>
+      <!-- Empieza la primera fila y columna -->
+      <div layout layout-align="center center" flex="100">
+        <!--Fila 1, Columna 1-->
+        <div layout="column" layout-align="start center" flex="50">
+          <md-list>
+            <md-list-item>
+              <div flex="100" layout layout-align="start center">
+                <div flex="columns" flex= "100">
+                  <!-- <div> -->
+                    <md-input-container flex="100">
+                      <label>Referidos</label>
+                      <input ng-model="vm.prospects.referidos" ng-disabled="vm.consulta"/>
+                    </md-input-container>
+                  <!-- </div> -->
+                  <!-- <div> -->
+                    <md-input-container flex="100">
+                      <label>Llamadas</label>
+                      <input ng-model="vm.prospects.llamadas" ng-disabled="vm.consulta"/>
+                    </md-input-container>
+                  <!-- </div> -->
+                  <!-- <div> -->
+                    <md-input-container flex="100">
+                      <label>Contactos</label>
+                      <input ng-model="vm.prospects.contactos" ng-disabled="vm.consulta"/>
+                    </md-input-container>
+                  <!-- </div> -->
+                  <!-- <div> -->
+                    <md-input-container flex="100">
+                      <label>Citas</label>
+                      <input ng-model="vm.prospects.citas" ng-disabled="vm.consulta"/>
+                    </md-input-container>
+                  <!-- </div> -->
+                </div>
+              </div>
+            </md-list-item>
+          </md-list>
+        </div>
+        <!-- Fila 1, Columna 2 -->
+        <div layout layout-align="center center" flex="50">
+          <md-list>
+            <md-list-item>
+              <div flex="100" layout layout-align="start center">
+                <div flex="columns" flex= "100">
+                  <!-- <div> -->
+                    <md-input-container flex="100">
+                      <label>Entrevistas inciales</label>
+                      <input ng-model="vm.productivity.iInterview" ng-disabled="vm.consulta"/>
+                    </md-input-container>
+                  <!-- </div> -->
+                  <!-- <div> -->
+                    <md-input-container flex="100">
+                      <label>Entrevistas cierre</label>
+                      <input ng-model="vm.productivity.cInterview" ng-disabled="vm.consulta"/>
+                    </md-input-container>
+                  <!-- </div> -->
+                  <!-- <div> -->
+                    <md-input-container flex="100">
+                      <label>Total horas venta</label>
+                      <input ng-model="vm.productivity.hrsVenta" ng-disabled="vm.consulta"/>
+                    </md-input-container>
+                  <!-- </div> -->
+                  <!-- <div> -->
+                    <md-input-container flex="100">
+                      <label>Solicitudes ingresadas</label>
+                      <input ng-model="vm.productivity.req" ng-disabled="vm.consulta"/>
+                    </md-input-container>
+                  <!-- </div> -->
+                </div>
+              </div>
+
+             <!-- <md-divider></md-divider> -->
+            </md-list-item>
+          </md-list>
+        </div>
+        <!-- <md-divider></md-divider> -->
+      </div>
+      <!-- SEGuNDA FILA -->
+      <div layout layout-align="start center" flex="100">
+        <div layout layout-align="center center" flex="40">
+          <h6>RESULTADOS FINALES</h6>
+        </div>
+        <div layout layout-align="end center" flex="10">  <!--Vacio para la separación-->
+        </div>
+        <div layout layout-align="center center" flex="40">
+          <h6>SCORE</h6>
+        </div>
+      </div>
+      <md-divider></md-divider>
+      <div layout layout-align="center center" flex="100">
+        <!-- Empieza la primera columna de la segunda fila-->
+        <div layout layout-align="center center" flex="50">
+          <md-list>
+            <md-list-item>
+              <div flex="100" layout layout-align="start center">
+                <div flex="columns" flex= "100">
+                  <!-- <div> -->
+                    <md-input-container flex="100">
+                      <label>Comisiones 1er año</label>
+                      <input ng-model="vm.finalResults.comisiones" ng-disabled="vm.consulta"/>
+                    </md-input-container>
+                  <!-- </div> -->
+                  <!-- <div> -->
+                    <md-input-container flex="100">
+                      <label>Pólizas pagadas</label>
+                      <input ng-model="vm.finalResults.polizasPagadas" ng-disabled="vm.consulta"/>
+                    </md-input-container>
+                  <!-- </div> -->
+                </div>
+              </div>
+            </md-list-item>
+          </md-list>
+        </div>
+        <!-- Empieza la segunda columna -->
+        <div layout layout-align="start center" flex="50">
+          <md-list flex="100">
+            <md-list-item>
+              <div flex="100" layout layout-align="end center">
+                <md-card flex=80>
+                  <md-card-title>
+                    <md-card-title-text>
+                      <span class="md-headline">{{vm.finalResults.score}}</span>
+                      <span class="md-subhead">Puntos totales</span>
+                    </md-card-title-text>
+                  </md-card-title>
+                </md-card>
+              </div>
+            </md-list-item>
+          </md-list>
+        </div>
+        <!-- <md-divider></md-divider> -->
+      </div>
+      <div flex="100" layout layout-align="end center">
+        <md-button class="md-raised" style='background-color: green'>Guardar</md-button>
+      </div>
+    </md-card-content>
+  </md-card>
+</div>

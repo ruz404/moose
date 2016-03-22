@@ -32,14 +32,14 @@
 						</div>
 						<div flex="25" layout layout-align="start center">
 							Objetivos de Ingreso
-							<md-button class="md-icon-button md-secondary" ng-click="vm.ordenarSemanas( 'sem' )">
+							<md-button class="md-icon-button" ng-class="{ 'md-secondary': vm.filtroActivo !== 'ob', 'md-primary': vm.filtroActivo === 'ob' }" ng-click="vm.ordenar( 'ob' )">
 								<md-icon ng-show="vm.ordering == 'DESC'" md-set-font="material-icons">arrow_downward</md-icon>
 								<md-icon ng-show="vm.ordering == 'ASC'" md-set-font="material-icons">arrow_upward</md-icon>
 							</md-button>
 						</div>
 						<div flex="25" layout layout-align="start center">
 							Prima promedio anual
-							<md-button class="md-icon-button md-secondary" ng-click="vm.ordenarSemanas( 'sem' )">
+							<md-button class="md-icon-button" ng-class="{ 'md-secondary': vm.filtroActivo !== 'prima', 'md-primary': vm.filtroActivo === 'prima' }" ng-click="vm.ordenar( 'prima' )">
 								<md-icon ng-show="vm.ordering == 'DESC'" md-set-font="material-icons">arrow_downward</md-icon>
 								<md-icon ng-show="vm.ordering == 'ASC'" md-set-font="material-icons">arrow_upward</md-icon>
 							</md-button>

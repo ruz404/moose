@@ -1,0 +1,122 @@
+<div ng-controller="ag3ListaController as vm"ng-cloak>
+  <md-card>
+    <md-card-header>
+      <div layout flex>
+        <div layout layout-align="start center" flex="80">
+          <h1 class="md-toolbar-tools">ag3 - Lista</h1>
+        </div>
+        <div layout="row" layout-sm="column" layout-align="end center" flex="40">
+          <md-button class="md-icon-button" ng-click="vm.click(true)">
+            <i class="material-icons">search</i>
+          </md-button>
+        </div>
+      </div>
+    </md-card-header>
+    <!-- Contenido de tarjeta -->
+    <md-card-content>
+      <md-subheader class="md-no-sticky">
+        <div flex="100" layout layout-align="start center" >
+          <div flex="10" layout layout-align="start center">Fecha
+            <md-button class="md-icon-button" ng-class="{ 'md-secondary': vm.filtroActivo !== 'fecha', 'md-primary': vm.filtroActivo === 'fecha' }" ng-click="vm.ordenar( 'fecha' )">
+              <md-icon ng-show="vm.ordering == 'DESC'" md-set-font="material-icons">arrow_downward</md-icon>
+              <md-icon ng-show="vm.ordering == 'ASC'" md-set-font="material-icons">arrow_upward</md-icon>
+            </md-button>
+          </div>
+          <div flex="10" layout layout-align="start center">Score
+            <md-button class="md-icon-button" ng-class="{ 'md-secondary': vm.filtroActivo !== 'score', 'md-primary': vm.filtroActivo === 'score' }" ng-click="vm.ordenar( 'score' )">
+              <md-icon ng-show="vm.ordering == 'DESC'" md-set-font="material-icons">arrow_downward</md-icon>
+              <md-icon ng-show="vm.ordering == 'ASC'" md-set-font="material-icons">arrow_upward</md-icon>
+            </md-button>
+          </div>
+          <div flex="20" layout layout-align="start center">Entrevistas Iniciales
+            <md-button class="md-icon-button" ng-class="{ 'md-secondary': vm.filtroActivo !== 'iInterview', 'md-primary': vm.filtroActivo === 'iInterview' }" ng-click="vm.ordenar( 'iInterview' )">
+              <md-icon ng-show="vm.ordering == 'DESC'" md-set-font="material-icons">arrow_downward</md-icon>
+              <md-icon ng-show="vm.ordering == 'ASC'" md-set-font="material-icons">arrow_upward</md-icon>
+            </md-button>
+          </div>
+          <div flex="15" layout layout-align="start center">Entrevistas Cierre
+            <md-button class="md-icon-button" ng-class="{ 'md-secondary': vm.filtroActivo !== 'cInterview', 'md-primary': vm.filtroActivo === 'cInterview' }" ng-click="vm.ordenar( 'cInterview' )">
+              <md-icon ng-show="vm.ordering == 'DESC'" md-set-font="material-icons">arrow_downward</md-icon>
+              <md-icon ng-show="vm.ordering == 'ASC'" md-set-font="material-icons">arrow_upward</md-icon>
+          </md-button>
+          </div>
+          <div flex="15" layout layout-align="start center">Solicitudes Ingresadas
+            <md-button class="md-icon-button" ng-class="{ 'md-secondary': vm.filtroActivo !== 'req', 'md-primary': vm.filtroActivo === 'req' }" ng-click="vm.ordenar( 'req' )">
+              <md-icon ng-show="vm.ordering == 'DESC'" md-set-font="material-icons">arrow_downward</md-icon>
+              <md-icon ng-show="vm.ordering == 'ASC'" md-set-font="material-icons">arrow_upward</md-icon>
+            </md-button>
+          </div>
+          <div flex="15" layout layout-align="start center">Pólizas pagadas
+            <md-button class="md-icon-button" ng-class="{ 'md-secondary': vm.filtroActivo !== 'polizas', 'md-primary': vm.filtroActivo === 'polizas' }" ng-click="vm.ordenar( 'polizas' )">
+              <md-icon ng-show="vm.ordering == 'DESC'" md-set-font="material-icons">arrow_downward</md-icon>
+              <md-icon ng-show="vm.ordering == 'ASC'" md-set-font="material-icons">arrow_upward</md-icon>
+            </md-button>
+          </div>
+          <div flex="15" layout layout-align="start center">Horas de venta
+            <md-button class="md-icon-button" ng-class="{ 'md-secondary': vm.filtroActivo !== 'hrsVenta', 'md-primary': vm.filtroActivo === 'hrsVenta' }" ng-click="vm.ordenar( 'hrsVenta' )">
+              <md-icon ng-show="vm.ordering == 'DESC'" md-set-font="material-icons">arrow_downward</md-icon>
+              <md-icon ng-show="vm.ordering == 'ASC'" md-set-font="material-icons">arrow_upward</md-icon>
+            </md-button>
+          </div>
+        </div>
+      </md-subheader>
+      <!-- <md-divider></md-divider> -->
+      <!--Se termina subheader y empieza la lista -->
+      <md-list>
+        <md-divider></md-divider>
+        <md-list-item ng-repeat="item in vm.ag3Array" ng-click="vm.prueba( item )">
+          <md-divider></md-divider>
+          <div flex="100" layout layout-align="start center" >
+            <div flex="10" layout layou-align = "end center">
+              <p>{{item.fecha}}</p>
+            </div>
+            <div flex="10" layout layout-align="center center">
+              <p>{{ item.score }}</p>
+            </div>
+            <div flex="20" layout layout-align="center center">
+              <p> {{ item.iInterview }} </p>
+            </div>
+            <div flex="15" layout layout-align="center center">
+              <p> {{ item.cInterview }} </p>
+            </div>
+            <div flex="15" layout layout-align="center center">
+              <p> {{ item.req }} </p>
+            </div>
+            <div flex="15" layout layout-align="center center">
+              <p> {{ item.polizas }} </p>
+            </div>
+            <div flex="15" layout layout-align="center center">
+              <p> {{ item.hrsVenta }} </p>
+            </div>
+          <!-- Cuadro de menu de opciones -->
+            <div layout="column" flex-sm="5" layout-align="center center" style="visibility: hidden;">
+              <md-menu md-offset="0 -7">
+                <md-button id="{{item.id}}" aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                  <i class="material-icons">more_vert</i>
+                </md-button>
+                <md-menu-content width="3"  >
+                  <md-menu-item>
+                    <md-button ng-click="ag2Controller.announceClick($index)">
+                      <md-icon md-font-set="material-icons">info</md-icon>
+                        Ver Detalle
+                    </md-button>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <md-button ng-click="ag2Controller.announceClick($index)">
+                      <md-icon md-font-set="material-icons">mode_edit</md-icon>
+                        Editar
+                    </md-button>
+                  </md-menu-item>
+                </md-menu-content>
+              </md-menu>
+            </div><!--TERMINA menu de opciones -->
+          </div>
+        </md-list-item>
+      </md-list>
+    </md-card-content>
+  </md-card>
+  <div flex style="height: 35px"></div>
+  <md-button class="md-fab md-accent" style="position: fixed; right:50px; bottom:10px">
+    <md-icon md-font-set="material-icons">add</md-icon>
+  </md-button>
+</div>
